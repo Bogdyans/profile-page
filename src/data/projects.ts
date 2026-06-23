@@ -23,20 +23,23 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "provision",
+    id: "perekusov",
     num: "№ 01",
-    year: "2025",
+    year: "2026",
     rot: -1.6,
     accent: "#C1272D",
-    title: { ru: "ПРОВИАНТ", en: "PROVISION" },
-    kind: { ru: "Мобильное приложение · Питание", en: "Mobile app · Nutrition" },
-    short: { ru: "Дневник питания и расчёт рациона по целям.", en: "A nutrition diary and meal planning by goals." },
-    desc: {
-      ru: "Приложение для учёта питания: дневник приёмов пищи, расчёт КБЖУ, цели по весу и подбор рациона. Спроектировал и собрал клиент и сервер, придумал логику расчётов и синхронизацию между устройствами.",
-      en: "A nutrition tracking app: a meal diary, calorie & macro calculation, weight goals and meal planning. I designed and built both client and server, the calculation logic and cross-device sync.",
+    title: { ru: "ПЕРЕКУСОВ.НЕТ", en: "PEREKUSOV.NET" },
+    kind: { ru: "Мобильное приложение · Дневник питания", en: "Mobile app · Nutrition diary" },
+    short: {
+      ru: "Дневник питания с распознаванием блюд по фото и AI-рекомендациями.",
+      en: "A nutrition diary with photo dish recognition and AI recommendations.",
     },
-    role: { ru: "Fullstack — клиент, сервер, база", en: "Fullstack — client, server, database" },
-    stack: ["React Native", "Node.js", "PostgreSQL", "REST"],
+    desc: {
+      ru: "Полноценное приложение «Дневник питания»: учёт приёмов пищи с составом, граммовкой и фото, распознавание блюд по фотографии, аналитика калорий и БЖУ, динамика веса, семейные группы и чат. На основе собранных данных AI формирует персональные рекомендации. Дипломный проект (ВКР) — спроектировал и собрал клиент и сервер с нуля.",
+      en: "A full nutrition-diary app: meal logging with composition, grams and photos, dish recognition from a photo, calorie & macro analytics, weight dynamics, family groups and chat. An AI builds personalized recommendations from the collected data. My thesis project — I designed and built both the client and the server from scratch.",
+    },
+    role: { ru: "Fullstack — клиент, сервер, БД, AI", en: "Fullstack — client, server, database, AI" },
+    stack: ["React Native", "NestJS", "Prisma", "PostgreSQL", "AI"],
   },
   {
     id: "voxel",
@@ -44,15 +47,18 @@ export const projects: Project[] = [
     year: "2024",
     rot: 1.4,
     accent: "#7A4B27",
-    title: { ru: "ВОКСЕЛЬ", en: "VOXEL ENGINE" },
-    kind: { ru: "Графический движок · C++", en: "Graphics engine · C++" },
-    short: { ru: "Собственный движок воксельных миров с бесконечной генерацией.", en: "A custom engine for voxel worlds with infinite generation." },
-    desc: {
-      ru: "Собственный графический движок для воксельных миров: чанковая генерация, бесконечный ландшафт, динамическое освещение и оптимизация рендера. Написан с нуля на C++ и OpenGL, чтобы разобраться, как всё устроено под капотом.",
-      en: "A custom graphics engine for voxel worlds: chunked generation, infinite terrain, dynamic lighting and render optimization. Written from scratch in C++ and OpenGL to understand how everything works under the hood.",
+    title: { ru: "ВОКСЕЛЬ", en: "VOXEL GAME" },
+    kind: { ru: "Игра · Воксельная песочница · C++", en: "Game · Voxel sandbox · C++" },
+    short: {
+      ru: "Воксельная песочница в духе Minecraft: чанки, блоки, физика, мобы.",
+      en: "A Minecraft-like voxel sandbox: chunks, blocks, physics, mobs.",
     },
-    role: { ru: "Архитектура и рендер с нуля", en: "Architecture and renderer, from zero" },
-    stack: ["C++", "OpenGL", "GLSL", "CMake"],
+    desc: {
+      ru: "Воксельная песочница в духе Minecraft, написанная с нуля на C++ и OpenGL: мир из чанков, ломание и постановка текстурных блоков, игрок от первого лица с физикой и коллизиями, хотбар, мобы и меню миров. Делал, чтобы разобраться, как всё устроено под капотом — рендер, генерация мира и игровой цикл.",
+      en: "A Minecraft-like voxel sandbox written from scratch in C++ and OpenGL: a chunked world, breaking and placing textured blocks, a first-person player with physics and collisions, a hotbar, mobs and a world menu. I built it to understand how it all works under the hood — rendering, world generation and the game loop.",
+    },
+    role: { ru: "Движок и геймплей с нуля", en: "Engine and gameplay from scratch" },
+    stack: ["C++", "OpenGL", "GLFW", "GLM"],
   },
   {
     id: "garden",
@@ -61,14 +67,17 @@ export const projects: Project[] = [
     rot: -1.2,
     accent: "#C1272D",
     title: { ru: "ОБОРОНА ОГОРОДА", en: "GARDEN DEFENSE" },
-    kind: { ru: "Игра · Tower Defense", en: "Game · Tower Defense" },
-    short: { ru: "Игра в духе Plants vs Zombies с собственной логикой и волнами.", en: "A Plants vs Zombies–style game with custom logic and waves." },
-    desc: {
-      ru: "Игра в духе Plants vs Zombies: волны противников, оборонительные «растения», экономика солнца и собственная игровая логика. Сделал игровой цикл, баланс, анимации и систему уровней.",
-      en: 'A Plants vs Zombies–style game: enemy waves, defensive "plants", a sun economy and custom game logic. I built the game loop, balance, animations and the level system.',
+    kind: { ru: "Игра · Tower Defense · C++", en: "Game · Tower defense · C++" },
+    short: {
+      ru: "Клон Plants vs Zombies на raylib с честной механикой волн.",
+      en: "A Plants vs Zombies clone in raylib with authentic wave mechanics.",
     },
-    role: { ru: "Геймдизайн и движок игры", en: "Game design and game engine" },
-    stack: ["C++", "SFML", "ECS"],
+    desc: {
+      ru: "Клон Plants vs Zombies на C++ и raylib: 9 растений, зомби с послойной бронёй и статус-эффектами (яд, заморозка), экономика солнца и кампания из уровней. Волны идут не по таймеру, а по «бюджету угрозы» и HP-гейтингу — порт оригинального алгоритма PvZ. Архитектура развязана: сущности общаются с миром только через небольшой API.",
+      en: "A Plants vs Zombies clone in C++ and raylib: 9 plants, zombies with layered armor and status effects (poison, chill), a sun economy and a level campaign. Waves run on a threat budget and HP-gated pacing rather than a fixed timer — a port of PvZ's original algorithm. The architecture is decoupled: entities talk to the world only through a small API.",
+    },
+    role: { ru: "Вся игровая логика, баланс и система волн", en: "All game logic, balance and the wave system" },
+    stack: ["C++", "raylib", "CMake"],
   },
   {
     id: "archi",
@@ -78,12 +87,15 @@ export const projects: Project[] = [
     accent: "#B8860B",
     title: { ru: "АРХИ·БЮРО", en: "ARCHI STUDIO" },
     kind: { ru: "Сайт · Архитектурное бюро", en: "Website · Architecture studio" },
-    short: { ru: "Сайт-витрина для архитектурной мастерской.", en: "A showcase website for an architecture studio." },
-    desc: {
-      ru: "Сайт-витрина для архитектурной мастерской: проекты, портфолио, плавная подача и внимание к деталям. Сверстал и оживил интерфейс, настроил CMS, чтобы команда сама редактировала контент.",
-      en: "A showcase website for an architecture studio: projects, portfolio, smooth presentation and attention to detail. I built and animated the interface and set up a CMS so the team can edit content themselves.",
+    short: {
+      ru: "Анимированный сайт-витрина архитектурной мастерской.",
+      en: "An animated showcase site for an architecture studio.",
     },
-    role: { ru: "Frontend и интеграция CMS", en: "Frontend and CMS integration" },
-    stack: ["Next.js", "TypeScript", "GSAP", "CMS"],
+    desc: {
+      ru: "Сайт-витрина для архитектурной мастерской с инновационным подходом: проекты, секция технологий (3D-сканирование, алгоритмическое проектирование, VR), анимации на скролле, анимированные счётчики и кастомный курсор. Собрал весь фронтенд и анимации с нуля на Next.js.",
+      en: "A showcase site for an architecture studio with an innovative approach: projects, a technology section (3D scanning, algorithmic design, VR), scroll-driven animations, animated counters and a custom cursor. I built the whole frontend and its animations from scratch in Next.js.",
+    },
+    role: { ru: "Весь фронтенд и анимации", en: "The whole frontend and animations" },
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
 ];
