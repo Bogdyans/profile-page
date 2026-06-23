@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Design tokens (palette + fonts). Exposed as Tailwind theme values so they
+   can be used as utilities (e.g. text-red, font-display) and serve as docs. */
+@theme {
+  --color-paper: #efe4cc;
+  --color-paper-shade: #e8d9b5;
+  --color-ink: #1a1a1a;
+  --color-red: #c1272d;
+  --color-brass: #b8860b;
+  --color-brown: #7a4b27;
+
+  --font-display: "Oswald", sans-serif;
+  --font-hand: "Caveat", cursive;
+  --font-type: "Special Elite", monospace;
+}
+
+/* Base + global decoration, ported 1:1 from the original poster. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #efe4cc;
+  font-family: Oswald, sans-serif;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinrev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes foldIn {
+  0% {
+    transform: perspective(1800px) rotateX(-16deg) translateY(-30px);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+::selection {
+  background: #c1272d;
+  color: #efe4cc;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #e8d9b5;
+}
+::-webkit-scrollbar-thumb {
+  background: #7a4b27;
+  border: 2px solid #e8d9b5;
+}
